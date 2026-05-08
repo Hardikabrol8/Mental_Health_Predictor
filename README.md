@@ -76,8 +76,8 @@ This app allows you to:
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/yourusername/mental-health-predictor-app.git
-cd mental-health-predictor-app
+git clone https://github.com/Hardikabrol8/Mental_Health_Predictor.git
+cd Mental_Health_Predictor
 
 # 2. Create a virtual environment and activate it
 python -m venv venv
@@ -121,6 +121,6 @@ MIT License. See [`LICENSE`](LICENSE) file.
 
 ## 🌐 Connect
 
-[![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourusername)
+[![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hardikabrol8)
 &nbsp;
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yourusername)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hardik-abrol-639068288/)
