@@ -30,11 +30,12 @@ This made it ideal for our dataset, which consists entirely of categorical varia
 
 st.subheader(" Feature Importance Analysis",divider="red")
 
-model_path = "models/Mental_Health_Prediction_model2.cbm"
+BASE_DIR = Path(__file__).resolve().parent.parent
+model_path = BASE_DIR / "models" / "Mental_Health_Prediction_model2.cbm"
 
 model = load_model(model_path)
 
-X_train = load_data("Data/X_train2.csv")
+X_train = load_data(BASE_DIR / "Data" / "X_train2.csv")
 
 feature_names = model.feature_names_
 importances = model.get_feature_importance()

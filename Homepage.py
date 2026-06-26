@@ -1,26 +1,4 @@
-# import streamlit as st 
-# from utils import load_model
-# from pathlib import Path
 
-# st.set_page_config("Mental Health Predictor",layout="wide")
-
-# st.title("Mental Heath Predictor App")
-
-# st.markdown("""Welcome to the **Mental Health Predictor App ** dashboard.  
-# Use the sidebar to explore the following:
-# - 📊 **EDA Dashboard**: Insights into the dataset and Exploratory Data Analysis
-# - 🧠 **Treatment Predictor**: MCQ-style quiz to predict if you may need mental health treatment
-# """)
-
-# model_path = Path("/Users/nilaysingh/Desktop/Mental-Health-Predictor-App/models/Mental_Health_Prediction_model.cbm")
-# model = load_model(model_path)
-
-# st.markdown("""---  
-# Made with ❤️ using Streamlit | [GitHub](https://github.com/yourusername/mental_health_app)
-# """)
-
-
-import streamlit as st
 
 from pathlib import Path
 
@@ -105,7 +83,7 @@ col1, col2 = st.columns(2)
 with col1:
     st.markdown(
         "<div style='text-align: center;'>"
-        "<a href='https://github.com/n1lays1ngh' target='_blank'>"
+        "<a href='https://github.com/Hardikabrol8' target='_blank'>"
         "<img src='https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white'>"
         "</a></div>",
         unsafe_allow_html=True
@@ -114,7 +92,7 @@ with col1:
 with col2:
     st.markdown(
         "<div style='text-align: center;'>"
-        "<a href='https://www.linkedin.com/in/nilay-singh-796808276/' target='_blank'>"
+        "<a href='https://www.linkedin.com/in/hardik-abrol-639068288/' target='_blank'>"
         "<img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'>"
         "</a></div>",
         unsafe_allow_html=True
@@ -125,7 +103,7 @@ st.markdown("---")
 st.markdown(
     """
     <p style='text-align: center; font-size: 14px;'>Made with ❤️ using Streamlit |
-    <a href='https://github.com/n1lays1ngh/Mental-Health-Predictor-App' target='_blank'>GitHub Repo</a></p>
+    <a href='https://github.com/Hardikabrol8/Mental_Health_Predictor' target='_blank'>GitHub Repo</a></p>
     """,
     unsafe_allow_html=True
 )

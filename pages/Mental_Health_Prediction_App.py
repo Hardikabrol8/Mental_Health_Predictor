@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
-import joblib
-from utils import preprocess_input ,load_model
+from pathlib import Path
+from utils import preprocess_input, load_model, logger
 
-model_path = "models/Mental_Health_Prediction_model2.cbm"
+BASE_DIR = Path(__file__).resolve().parent.parent
+model_path = BASE_DIR / "models" / "Mental_Health_Prediction_model2.cbm"
 
 model = load_model(model_path)
 
@@ -74,17 +75,17 @@ with st.form("mental_health_quiz"):
 
         # Preprocess input using utility function
         input_df = preprocess_input(user_answers, feature_order)
-        
-        # # Make prediction
-        # prediction = model.predict(input_df)[0]
 
-        # # Display result
-        # if prediction == 1:
-        #     st.success(" Based on your responses, you may benefit from mental health support. Consider seeking professional help.")
-        # else:
-        #     st.info(" You're not currently flagged for needing assistance, but staying mindful and proactive is always helpful.")
+        try:
+            prediction_proba = model.predict_proba(input_df)[0][1]  # Probability of class 1
+        except Exception:
+            logger.exception("Prediction failed for input: %s", user_answers)
+            st.error(
+                "Something went wrong while generating your prediction. "
+                "Please try again, and let us know if this keeps happening."
+            )
+            st.stop()
 
-        prediction_proba = model.predict_proba(input_df)[0][1]  # Probability of class 1
         prediction = int(prediction_proba >= 0.5)
         confidence_percent = prediction_proba * 100
 

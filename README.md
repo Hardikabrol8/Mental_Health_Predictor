@@ -30,7 +30,7 @@ Mental health issues are increasingly common in the tech industry, but they ofte
 
 You can interact with the full application, including the predictive quiz and exploratory dashboards, by visiting the link below:
 
-[🔗 Mental Health Predictor App](https://mental-health-predictor-app-n1lays1ngh.streamlit.app/)
+[🔗 Mental Health Predictor App](#) — *link coming soon, redeploying under my own account*
 
 This app allows you to:
 - Review detailed exploratory data analysis (EDA) on the Mental Health in Tech Survey dataset
@@ -87,7 +87,7 @@ source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 
 # 4. Run the app
-streamlit run app.py
+streamlit run Homepage.py
 ```
 
 ---

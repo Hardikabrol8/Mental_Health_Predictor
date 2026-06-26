@@ -1,15 +1,43 @@
+import logging
 import pandas as pd
 from catboost import CatBoostClassifier
 from pathlib import Path
-import streamlit as st 
+import streamlit as st
 
-def load_model(model_path:Path) -> CatBoostClassifier:
-    model = CatBoostClassifier()
-    model.load_model(str(model_path))
-    return model
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+)
+logger = logging.getLogger("mental_health_predictor")
 
+@st.cache_resource
+def load_model(model_path: Path) -> CatBoostClassifier:
+    try:
+        model = CatBoostClassifier()
+        model.load_model(str(model_path))
+        logger.info("Loaded model from %s", model_path)
+        return model
+    except Exception:
+        logger.exception("Failed to load model from %s", model_path)
+        st.error(
+            "We couldn't load the prediction model right now. "
+            "Please try again later or contact the site owner if this keeps happening."
+        )
+        st.stop()
+
+@st.cache_data
 def load_data(data_path: Path) -> pd.DataFrame:
-    return pd.read_csv(data_path)
+    try:
+        df = pd.read_csv(data_path)
+        logger.info("Loaded data from %s (%d rows)", data_path, len(df))
+        return df
+    except Exception:
+        logger.exception("Failed to load data from %s", data_path)
+        st.error(
+            "We couldn't load the dataset right now. "
+            "Please try again later or contact the site owner if this keeps happening."
+        )
+        st.stop()
 
 def preprocess_input(user_answers: dict, feature_order: list) -> pd.DataFrame:
     """
