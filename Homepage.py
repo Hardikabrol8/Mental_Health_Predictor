@@ -12,7 +12,7 @@ with st.sidebar:
 
 
 # Title section
-st.markdown("<h1 style='text-align: center; color: #4B8BBE;'>🧠 Mental Health Predictor App</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #6366F1;'>🧠 Mental Health Predictor App</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; font-size: 20px;'>A Streamlit-powered dashboard for predicting mental health treatment needs using survey data.</p>", unsafe_allow_html=True)
 st.markdown("<br>",unsafe_allow_html=True)
 st.markdown("""

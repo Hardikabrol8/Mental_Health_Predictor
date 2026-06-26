@@ -1,126 +1,131 @@
 # 🧠 Mental Health Predictor App
 
-An interactive Streamlit dashboard that explores mental health trends in the tech industry and uses a machine learning model to predict whether an individual might benefit from mental health support.
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://mentalhealthpredictor07.streamlit.app/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=flat&logo=github)](https://github.com/Hardikabrol8)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/hardik-abrol-639068288/)
+
+An interactive Streamlit-powered dashboard and machine learning application designed to explore mental health trends in the tech industry and predict whether an individual might benefit from professional mental health support.
 
 ---
 
-## 📌 Table of Contents
-1. [Overview](#overview)
-2. [Features](#features)
-3. [Tech Stack](#tech-stack)
-4. [Screenshots](#screenshots)
-5. [Setup Instructions](#setup-instructions)
-6. [Model Information](#model-information)
-7. [Disclaimer](#disclaimer)
-8. [Contributing](#contributing)
-9. [License](#license)
-10. [Connect](#connect)
+### 🌐 Live Application
+You can access and interact with the live deployed application here:  
+👉 **[https://mentalhealthpredictor07.streamlit.app/](https://mentalhealthpredictor07.streamlit.app/)**
 
 ---
 
-## 🧩 Overview
+## 🎯 Key Features
 
-Mental health issues are increasingly common in the tech industry, but they often go unnoticed or unspoken. This app aims to:
-- Visualize insights from survey data
-- Help individuals self-reflect through a quiz-based predictor
-- Raise awareness around mental well-being in professional environments
-
----
-## 🚀 Explore the Mental Health Predictor App
-
-You can interact with the full application, including the predictive quiz and exploratory dashboards, by visiting the link below:
-
-[🔗 Mental Health Predictor App](#) — *link coming soon, redeploying under my own account*
-
-This app allows you to:
-- Review detailed exploratory data analysis (EDA) on the Mental Health in Tech Survey dataset
-- Understand key patterns and factors influencing treatment-seeking behavior
-- Try out a predictive model trained using CatBoost to assess mental health tendencies based on user input
-
----
-## 🚀 Features
-- 📊 EDA Dashboard with demographic and mental health visualizations
-- 🧠 Quiz-based Treatment Predictor using CatBoost
-- 🔍 Feature Importance and Model Transparency
-- 🌐 Responsive UI with Streamlit and Tailwind-style theming
+- **📊 Interactive EDA Dashboard**: Dive deep into demographic distributions, behavioral attributes, and statistical analyses of survey respondents from around the world.
+- **🧠 Treatment Predictor Quiz**: Answer a curated, multiple-choice quiz backed by a machine learning model to estimate the probability of needing mental health support.
+- **🔍 Model Interpretability & Analysis**: Explore feature importances, evaluation metrics, and the rationale behind choosing the CatBoost model.
+- **🌓 Adaptive Theme**: Sleek, modern dark-mode design optimized for a comfortable visual experience.
 
 ---
 
-## 🛠️ Tech Stack
+## 📂 Repository Structure
 
-| Layer         | Tool/Library                     |
-|--------------|----------------------------------|
-| Frontend     | Streamlit                        |
-| Backend      | Python (CatBoost, Pandas)        |
-| ML Model     | CatBoost Classifier (.cbm file)  |
-| Visualization| Plotly, Seaborn, Matplotlib      |
-
----
-
-## 📸 Screenshots
-### 1. Homepage 
-![Homepage ](<assets/Homepage Screenshot.png>)
-
-### 2. Dashboard 
-![Dashboard](<assets/Dashboard Screenshot.png>)
-
-### 3. Model Analysis 
-![Model Analysis ](<assets/Model Analysis Screenshot.png>)
-
-### 4. Predictor App
-![Predictor App ](<assets/Predictor App Screenshot.png>)
-
----
-
-## ⚙️ Setup Instructions
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/Hardikabrol8/Mental_Health_Predictor.git
-cd Mental_Health_Predictor
-
-# 2. Create a virtual environment and activate it
-python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Run the app
-streamlit run Homepage.py
+```directory
+├── Homepage.py                 # Main entrypoint of the Streamlit application
+├── utils.py                    # Shared utility functions (model caching, preprocessing, insights)
+├── requirements.txt            # Python dependencies list
+├── LICENSE                     # MIT License details
+├── .streamlit/
+│   └── config.toml             # Streamlit theme and UI configurations (Dark Mode)
+├── pages/
+│   ├── Dashboard.py            # Exploratory Data Analysis page
+│   ├── Mental_Health_Prediction_App.py  # MCQ-style Treatment Predictor Quiz
+│   └── Model_Analysis.py       # Model features and evaluation breakdown
+├── Data/
+│   ├── Mental Health Dataset.csv # Raw survey data
+│   ├── cleaned_dataset.csv      # Preprocessed data for modeling/EDA
+│   └── chi2_cramersv_summary.csv# Precomputed statistical correlation matrix
+├── models/
+│   └── Mental_Health_Prediction_model2.cbm # Saved CatBoost Classifier model
+└── JupyterNotebook/
+    └── Mental_Health_Dataset.ipynb # Jupyter notebook containing model training and EDA workflow
 ```
 
 ---
 
-## 📊 Model Information
+## ⚙️ Local Setup Instructions
 
-- **Model Used**: CatBoost Classifier
-- **Why CatBoost?** Handles categorical data, offers interpretability, and works well with class imbalance.
-- **Top Features**: Continent, Care Options, Family History, Gender, etc.
-- **Performance**: F1-Score ~0.74, Recall (Needs Treatment) = 0.83
+Follow these steps to run the application locally on your machine:
+
+### Prerequisites
+- Python 3.9 or higher installed
+
+### Step-by-Step Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Hardikabrol8/Mental_Health_Predictor.git
+   cd Mental_Health_Predictor
+   ```
+
+2. **Set up a Virtual Environment:**
+   *On Windows:*
+   ```bash
+   python -m venv venv
+   .\venv\Scripts\activate
+   ```
+   *On macOS/Linux:*
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. **Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Launch the Application:**
+   ```bash
+   streamlit run Homepage.py
+   ```
+
+The application will launch automatically in your default browser at `http://localhost:8501`.
 
 ---
 
-## ⚠️ Disclaimer
+## 📊 Model Information & Architecture
 
-> This tool is **not** a replacement for medical or psychological diagnosis. It is only meant for awareness and educational purposes.
+- **Algorithm**: CatBoost Classifier
+- **Rationale**: Highly robust with categorical features, handles missing values naturally, and is resistant to overfitting without intensive scaling preprocessing.
+- **Top Features**: Continent, Care Options, Self-Employed status, Family History of mental illness, and Comfort in interview settings.
+- **Performance**: High recall score (~0.83) optimized specifically to minimize false negatives (failing to recognize individuals who need support).
+
+---
+
+> [!WARNING]
+> ### ⚠️ Clinical Disclaimer
+> This application is **not** a substitute for professional diagnosis, therapy, or medical advice. The predictions and analyses generated are based on general survey patterns and are for informational/educational purposes only. If you or someone you know is experiencing mental distress, please reach out to qualified healthcare providers or local support hotlines.
 
 ---
 
 ## 🤝 Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
+Contributions make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
 ## 🪪 License
 
-MIT License. See [`LICENSE`](LICENSE) file.
+Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information.
 
 ---
 
-## 🌐 Connect
+## 🌐 Connect & Feedback
 
-[![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hardikabrol8)
-&nbsp;
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hardik-abrol-639068288/)
+Feel free to connect or share your thoughts on the project!
+
+- **GitHub**: [@Hardikabrol8](https://github.com/Hardikabrol8)
+- **LinkedIn**: [Hardik Abrol](https://www.linkedin.com/in/hardik-abrol-639068288/)

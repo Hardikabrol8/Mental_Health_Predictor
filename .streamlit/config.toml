@@ -1,7 +1,7 @@
 [theme]
-base="light"
-primaryColor="#D72638"               # Bold red for accents (buttons, highlights)
-backgroundColor="#FFFFFF"           # Pure white background
-secondaryBackgroundColor="#F8F8F8"  # Light grey for sidebar and widgets
-textColor="#202124"                 # Dark grey for strong readability
+base="dark"
+primaryColor="#6366F1"               # Premium Indigo for accents (buttons, highlights)
+backgroundColor="#0F172A"           # Slate-900 for dark mode background
+secondaryBackgroundColor="#1E293B"  # Slate-800 for sidebar and widgets
+textColor="#F8FAFC"                 # Slate-50 for high contrast text
 font="sans serif"
